@@ -4,7 +4,7 @@ This project is a part of Udacity's self-driving nanodegree program. The goal of
 
 [//]: # (Image References)
 
-[image1]: ./output_images/output_tensor.png "output_tensor"
+[image1]: ./output_images/outputtensor.png "output_tensor"
 [image2]: ./output_images/result_testimgs.png "result"
 [image3]: ./output_images/yolo.png "yolo-tiny"
 
@@ -20,7 +20,7 @@ In this project, we implement the tiny model of [YOLOv1](https://pjreddie.com/me
 
 The network consists of 9 convolution layers and 3 fully connected layers. Each convolution layer is followed by a leaky ReLU and a max pooling layer.
 
-![alt text](image3)
+![alt text][image3]
 
 The final output is a 7x7x30 tensor of class probability and bounding box predictions. 
 
@@ -41,7 +41,7 @@ Output tensor: `7x7x(2x5+20) = 1470`
 
 At test time, the box and class probablities are combined that gives us class specific confidence scored in each predicted bounding box P(object|class).
 
-![alt text](image1)
+![alt text][image1]
 Image taken from https://docs.google.com/presentation/d/1kAa7NOamBt4calBU9iHgT8a86RRHz9Yz2oh4-GTdX6M/edit#slide=id.p
 
 ### Training
@@ -59,12 +59,13 @@ The output tensor from the model is converted to bounding boxes that are predict
 
 ### Results
 
-![alt text](image2)
+![alt text][image2]
 
 Pipeline on test video: [project_video_result.mp4](./project_video_result.mp4)
 
-### Thoughts and future work
 
+houghts and future work
+---
 It's exciting to see recent progress in real time, end-end object detection using CNNs. It alleviates some of the pains of fine tuning each module in classical pipelines. It also allows the model to look at the context of the entire image while detecting objects, rather than fixed regions/windows. Tiny-YOLO v1 works largely well except while localizing bounding boxes. It took some time in finding the right thresholds to correctly retain and combine bounding boxes during post processing. Even then, at times, it fails to accurately localize the boxes. [YOLOv2](https://arxiv.org/pdf/1612.08242.pdf) which uses only convolution layers and a pass through layer addresses these issues by using anchor boxes and constraining the location prediction. It has other improvements over version 1 like using batch normalization, high resolution classifiers and multi-scale features. On testing with the full blown YOLOv2, the bounding box prediction were far better. In some cases, it would also detect vehicles on the opposite side of the lane, even though they were partially occluded by the lane divider. 
 
 **Transfer learning**
