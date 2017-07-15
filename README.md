@@ -64,7 +64,7 @@ The output tensor from the model is converted to bounding boxes that are predict
 Pipeline on test video: [project_video_result.mp4](./project_video_result.mp4)
 
 
-houghts and future work
+Thoughts and future work
 ---
 It's exciting to see recent progress in real time, end-end object detection using CNNs. It alleviates some of the pains of fine tuning each module in classical pipelines. It also allows the model to look at the context of the entire image while detecting objects, rather than fixed regions/windows. Tiny-YOLO v1 works largely well except while localizing bounding boxes. It took some time in finding the right thresholds to correctly retain and combine bounding boxes during post processing. Even then, at times, it fails to accurately localize the boxes. [YOLOv2](https://arxiv.org/pdf/1612.08242.pdf) which uses only convolution layers and a pass through layer addresses these issues by using anchor boxes and constraining the location prediction. It has other improvements over version 1 like using batch normalization, high resolution classifiers and multi-scale features. On testing with the full blown YOLOv2, the bounding box prediction were far better. In some cases, it would also detect vehicles on the opposite side of the lane, even though they were partially occluded by the lane divider. 
 
