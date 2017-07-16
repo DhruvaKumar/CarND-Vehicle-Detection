@@ -2,6 +2,8 @@
 
 This project is a part of Udacity's self-driving nanodegree program. The goal of this project is to detect vehicles in a video. The code is in [main.ipynb](./main.ipynb). The final video is [here](./project_video_result.mp4)
 
+![Alt Text](./project_video_result.gif)
+
 [//]: # (Image References)
 
 [image1]: ./output_images/outputtensor.png "output_tensor"
